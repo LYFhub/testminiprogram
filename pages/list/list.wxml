@@ -1,0 +1,17 @@
+<!--pages/list/list.wxml-->
+<view class="container">
+  <block wx:for="{{arrList}}" wx:key="">
+  <!-- block 标签并不属于组件，不会在页面中渲染，仅作接收控制属性用 -->
+  <!-- for 循环指令包裹的范围内，子元素默认是 item，
+  如果想重新定义它的名字，可以在 wx:for="{{arrList}}" 后面增加 wx:for-item="item"，
+  同样的，也可以指定数组下标 wx:for-index="index" -->
+    <view class="item">
+      <text>{{item}}</text>
+    </view>
+  </block>
+  <block wx:if="{{arrList.length==0}}">
+    <view class="item">
+      <text>下拉加载数据</text>
+    </view>
+  </block>
+</view>
