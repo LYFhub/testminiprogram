@@ -1,9 +1,9 @@
 {
   "pages":[
+    "pages/list/list",
     "pages/flex/flex",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/list/list"
+    "pages/logs/logs"
   ],
   "window":{
     "backgroundColor": "white",

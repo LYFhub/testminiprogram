@@ -1,6 +1,8 @@
 //app.js
+import util from './utils/index';
 App({
   onLaunch: function () {
+    console.log('App init...');
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -32,8 +34,26 @@ App({
         }
       }
     })
+
+    util.request({
+      url: 'list',
+      mock: true,
+      data: {
+        tag: '微信热门',
+        start: 1,
+        days: 3,
+        pageSize: 5,
+        langs: 'en'
+      }
+    }).then(res => {
+      console.log(res)
+    })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    user: {
+      name: '',
+      avator: ''
+    }
   }
 })

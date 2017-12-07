@@ -1,17 +1,26 @@
 <!--pages/list/list.wxml-->
-<view class="container">
-  <block wx:for="{{arrList}}" wx:key="">
-  <!-- block 标签并不属于组件，不会在页面中渲染，仅作接收控制属性用 -->
-  <!-- for 循环指令包裹的范围内，子元素默认是 item，
-  如果想重新定义它的名字，可以在 wx:for="{{arrList}}" 后面增加 wx:for-item="item"，
-  同样的，也可以指定数组下标 wx:for-index="index" -->
-    <view class="item">
-      <text>{{item}}</text>
+<view class="wrapper">
+    <view class="group">
+        <view class="group-bar">
+            <view class="group-title on">今日</view>
+        </view>
+        <view class="group-content">
+            <view class="group-content-item">
+                <view class="group-content-item-desc ellipsis-multi-line ellipsis-line-3">为什么聪明人总能保持冷静？</view>
+                <image class="group-content-item-img" mode="aspectFill" src="https://n1image.hjfile.cn/mh/2017/06/26/9ffa8c56cfd76cf5159011f4017f022e.jpg"/>
+            </view>
+        </view>
     </view>
-  </block>
-  <block wx:if="{{arrList.length==0}}">
-    <view class="item">
-      <text>下拉加载数据</text>
+    <view class="group">
+        <view class="group-bar">
+            <view class="group-title">06月27日</view>
+        </view>
+        <view class="group-content">
+            <view class="group-content-item">
+                <view class="group-content-item-desc ellipsis-multi-line ellipsis-line-3">为什么聪明人总能保持冷静？</view>
+                <image class="group-content-item-img" mode="aspectFill" src="https://n1image.hjfile.cn/mh/2017/06/26/9ffa8c56cfd76cf5159011f4017f022e.jpg"/>
+            </view>
+        </view>
     </view>
-  </block>
+    <view class="no-more" hidden="">暂时没有更多内容</view>
 </view>
